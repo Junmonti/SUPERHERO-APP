@@ -1,0 +1,328 @@
+body {
+  margin: 0;
+  padding: 0;
+  font-family: 'Bangers', cursive;
+  color: white;
+  background: linear-gradient(135deg, #009999, #009999);
+  position: relative;
+  overflow-x: hidden;
+}
+
+#particles-js {
+  position: fixed;
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  opacity: 1;
+  background: linear-gradient(135deg, #009999, #009999); /* ← Add this line */
+}
+
+/* Ensure particles.js canvas doesn’t block clicks */
+#particles-js canvas {
+  pointer-events: none;
+}
+
+header {
+  text-align: center;
+  padding: 1rem 0;
+  position: relative; /* For absolute positioning of nav-toggle */
+}
+
+h1 {
+  font-family: "Bangers", cursive;
+  font-size: 2.5rem;
+  margin: 1rem 0;
+  color: #ffd700;
+  text-shadow: 0 0 15px red;
+  position: relative;
+  display: inline-block;
+  animation: float 3s ease-in-out infinite;
+}
+
+h1::after {
+  content: "";
+  position: absolute;
+  bottom: -5px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: linear-gradient(90deg, transparent, #ffd700, #c41e3a, transparent);
+  animation: streak 2s infinite ease-in-out;
+}
+
+nav#menu {
+  margin-top: 0.5rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  padding: 0.5rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 10;
+}
+
+nav#menu a {
+  color: white;
+  text-shadow: 0 0 15px red;
+  text-decoration: none;
+  font-size: 1rem;
+  transition: color 0.3s;
+}
+
+nav#menu a:hover {
+  color: #00ffcc;
+}
+
+.nav-toggle {
+  display: none;
+  font-size: 1.5rem;
+  background: none;
+  border: none;
+  color: white; /* Changed to white for visibility */
+  cursor: pointer;
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  z-index: 1000; /* Ensure button is above other elements */
+  pointer-events: auto; /* Ensure button is clickable */
+}
+
+.card-container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 1rem;
+  justify-items: center;
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.homepage-card-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 3 columns for homepage */
+  gap: 1rem;
+  justify-items: center;
+  margin: 1rem auto;
+  max-width: 1200px;
+  padding: 0 1rem;
+}
+
+.hero-card {
+  background: rgba(255, 255, 255, 0.05);
+  border: 2.3px solid #009999;
+  border-radius: 10px;
+  width: 100%;
+  max-width: 350px;
+  overflow: hidden;
+  color: #fff;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.3s;
+}
+
+.hero-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 10px 10px 0 0;
+  display: block;
+}
+
+.hero-card:hover {
+  transform: scale(1.05);
+}
+
+.container {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.about-content, .contact-content {
+  margin-bottom: 1rem;
+}
+
+.gif-section, .contact-gif {
+  text-align: center;
+  padding: 0.5rem 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+.gif-section img {
+  width: 100%;
+  max-width: 120px;
+  display: block;
+  margin: 0 auto;
+}
+
+h2 {
+  font-family: 'Bangers', cursive;
+  font-size: 1.5rem;
+  color: white;
+  text-shadow: 2px 2px 5px red;
+  margin-bottom: 0.5rem;
+}
+
+h5 {
+  font-family: 'Poppins', sans-serif;
+  font-size: 1.2rem;
+  color: white;
+  text-shadow: 2px 2px 5px black;
+  margin: 0.5rem 0;
+  background: rgba(0, 0, 0, 0.7);
+  padding: 0.75rem;
+  border-radius: 10px;
+}
+
+h4 {
+  font-family: 'Bangers', cursive;
+  font-size: 1.5rem;
+  color: #ffd700;
+  margin: 1rem 0 0.5rem;
+}
+
+.gallery img {
+  width: 100%;
+  max-width: 300px;
+  border-radius: 10px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+}
+
+.bio,
+.power-stats {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.bio p,
+.power-stats p {
+  background-color: rgba(0, 0, 0, 0.9);
+  border-radius: 10px;
+  padding: 0.5rem 1rem;
+  color: white;
+  font-weight: 600;
+  font-size: 0.9rem;
+  box-shadow: 0 0 10px red;
+  transition: transform 0.2s ease-in-out;
+  min-width: 120px;
+}
+
+.bio p:hover,
+.power-stats p:hover {
+  transform: scale(1.05);
+}
+
+.bio p b,
+.power-stats p b {
+  color: #ffcc00;
+}
+
+footer {
+  text-align: center;
+  margin-top: 0;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+  100% { transform: translateY(0); }
+}
+
+@keyframes slideIn {
+  from { transform: translateY(-100%); }
+  to { transform: translateY(0); }
+}
+
+@keyframes streak {
+  0% { transform: scaleX(0); }
+  50% { transform: scaleX(1); }
+  100% { transform: scaleX(0); }
+}
+
+/* Mobile-specific styles */
+@media (max-width: 768px) {
+  h1 {
+    font-size: 2rem;
+  }
+
+  h2 {
+    font-size: 1.2rem;
+  }
+
+  h5 {
+    font-size: 1rem;
+  }
+
+  h4 {
+    font-size: 1.2rem;
+  }
+
+  nav#menu {
+    display: none;
+    flex-direction: column;
+    background: rgba(0, 0, 0, 0.8);
+    position: absolute;
+    top: 4rem;
+    right: 1rem;
+    padding: 1rem;
+    border-radius: 10px;
+    z-index: 999; /* Ensure nav is above other elements */
+  }
+
+  nav#menu.active {
+    display: flex;
+  }
+
+  nav#menu.scrolled {
+    position: fixed;
+    top: 0;
+    right: 0;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .card-container,
+  .homepage-card-container {
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  }
+
+  .hero-card {
+    max-width: 100%;
+  }
+
+  .gif-section img {
+    max-width: 100px;
+  }
+
+  .container {
+    padding: 1rem 0.5rem;
+  }
+}
+
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem;
+  }
+
+  h2 {
+    font-size: 1rem;
+  }
+
+  h5 {
+    font-size: 0.9rem;
+  }
+
+  h4 {
+    font-size: 1rem;
+  }
+
+  .gif-section img {
+    max-width: 80px;
+  }
+}
